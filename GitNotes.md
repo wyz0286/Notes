@@ -126,7 +126,7 @@
 
 20. //配置commit的别名为co  
     ```git config --global alias.co commit```  
-    //等效于```git commit -m "bala bala bala..." ```
+    //等效于```git commit -m "bala bala bala..." ```  
     ```git co -m "bala bala bala..."```  
     每个仓库的Git配置文件都放在.git/config文件中,配置别名也可以直接修改这个文件，  
     如果改错了，可以删掉文件重新通过命令配置。
