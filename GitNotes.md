@@ -26,7 +26,8 @@
 ----------------------------------------- 
 
 
-4. > <img src="https://github.com/wyz0286/Notes/blob/master/git_workspace_and_staging_area.png?raw=true" div align=left>
+4. 
+> <img src="https://github.com/wyz0286/Notes/blob/master/git_workspace_and_staging_area.png?raw=true" div align=left>
 -----------------------------------------   
 
 
