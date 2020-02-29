@@ -27,7 +27,7 @@
 
 
 4. > <img src="https://github.com/wyz0286/Notes/blob/master/git_workspace_and_staging_area.png?raw=true" div align=left>
------------------------------------------ 
+-----------------------------------------   
 
 
 5.  > 1. 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令```git checkout -- file```。
