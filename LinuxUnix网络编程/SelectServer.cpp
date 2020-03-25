@@ -1,6 +1,7 @@
-//select实现单进程并发服务器
+//select IO复用实现单进程并发服务器
 //可用PidClient进行测试
 //g++ filename.cpp -o filename
+
 #include<stdio.h>
 #include<string.h>
 #include<unistd.h>
