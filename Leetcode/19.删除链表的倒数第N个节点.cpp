@@ -1,12 +1,18 @@
-//20. 有效的括号
-//给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+//19.删除链表的倒数第N个节点
+//给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
 //
-//有效字符串需满足：
-//左括号必须用相同类型的右括号闭合。
-//左括号必须以正确的顺序闭合。
-//注意空字符串可被认为是有效字符串。
-
-
+//示例：
+//
+//给定一个链表 : 1->2->3->4->5, 和 n = 2.
+//
+//当删除了倒数第二个节点后，链表变为 1->2->3->5.
+//说明：
+//
+//给定的 n 保证是有效的。
+//
+//进阶：
+//
+//你能尝试使用一趟扫描实现吗？
 #include<iostream>
 #include<vector>
 #include<string>
@@ -14,42 +20,36 @@
 
 using namespace std;
 
-bool isValid(string s) {
-    int len = s.length();
-    stack<char> a;
-    for (int i = 0; i < len; i++)
+
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+ 
+
+ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode* dummy = new ListNode(NULL);
+    dummy->next = head;
+    ListNode* fast, * slow;
+    fast = slow = dummy;
+    for (int i = 0; i < n; i++)
     {
-        if (s[i] == '{' || s[i] == '(' || s[i] == '[')
-        {
-            a.push(s[i]);
-            continue;
-        }
-        else if (s[i] == '}')
-        {
-            if (a.empty())return false;
-            if (a.top() != '{')return false;
-            a.pop();
-        }
-        else if (s[i] == ')')
-        {
-            if (a.empty())return false;
-            if (a.top() != '(')return false;
-            a.pop();
-        }
-        else if (s[i] == ']')
-        {
-            if (a.empty())return false;
-            if (a.top() != '[')return false;
-            a.pop();
-        }
+        fast = fast->next;
     }
-    if (a.empty())return true;
-    else return false;
+    for (; fast->next != NULL;)
+    {
+        fast = fast->next;
+        slow = slow->next;
+    }
+    slow->next = slow->next->next;
+    return dummy->next;
 }
 
 int main()
 {
-    cout << isValid("()))")<< endl;
-    cout << isValid("([)]") << endl;
+    /*cout << isValid("()))")<< endl;
+    cout << isValid("([)]") << endl;*/
     return 0;
 }
