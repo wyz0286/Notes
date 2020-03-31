@@ -33,18 +33,19 @@ ListNode* partition(ListNode* head, int x) {
     {
         if (r->val < x)
         {
-            ListNode* tmp = new ListNode(r->val);
-            p->next = tmp;
-            p = tmp;
+            //ListNode* tmp = new ListNode(r->val);
+            p->next = r;
+            p = r;
         }
         else
         {
-            ListNode* tmp = new ListNode(r->val);
-            q->next = tmp;
-            q = tmp;
+            //ListNode* tmp = new ListNode(r->val);
+            q->next = r;
+            q = r;
         }
         r = r->next;
     }
+    q->next = NULL;
     p->next = dummy2->next;
     delete(dummy2);
     return dummy1->next;
