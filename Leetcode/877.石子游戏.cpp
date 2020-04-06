@@ -14,7 +14,7 @@ bool stoneGame(vector<int>& piles) {
     for (int size = 1; size <= n; ++size)
         for (int i = 1, j = size; j <= n; ++i, ++j) 
         {
-            int parity = (j + i + n) % 2;  // j - i - N; but +x = -x (mod 2)
+            int parity = (j + i + n) % 2;  // j - i - N; but +x = -x (mod 2); j - i + 1和 N mod 2 同余
             if (parity == 1)
                 dp[i][j] = max(piles[i - 1] + dp[i + 1][j], piles[j - 1] + dp[i][j - 1]);
             else
