@@ -27,6 +27,7 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
     {
         return {};
     }
+	
     sort(intervals.begin(), intervals.end());
     vector<vector<int>> merged;
     for (int i = 0; i < intervals.size(); ++i) 
