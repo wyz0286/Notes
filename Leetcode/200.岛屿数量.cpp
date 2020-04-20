@@ -135,7 +135,7 @@ public:
 
 private:
     vector<int> parent;
-    vector<int> rank;
+    vector<int> rank;//使并查集树的左右子树的深度差尽可能小https://segmentfault.com/a/1190000004023326
     int count;
 };
 
