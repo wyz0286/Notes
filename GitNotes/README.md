@@ -89,7 +89,7 @@
     如果推送失败，先用git pull抓取远程的新提交；  
     在本地创建和远程分支对应的分支，使用```git checkout -b branch-name origin/branch-name```，本地和远程分支的名称最好一致；  
     建立本地分支和远程分支的关联，使用```git branch --set-upstream branch-name origin/branch-name```；  
-    从远程抓取分支，使用```git pull```，如果有冲突，要先处理冲突。
+    从远程抓取分支，使用```git pull origin branch-name```，如果有冲突，要先处理冲突。
 -----------------------------------------
 
 
@@ -136,5 +136,11 @@
 21. 搭建Git服务器非常简单，通常10分钟即可完成；  
     要方便管理公钥，用Gitosis；  
     要像SVN那样变态地控制权限，用Gitolite。
+
+-----------------------------------------
+
+
+22. 命令```git diff branch-name origin/branch-name```用于查看本地仓库和远程仓库的不同(具体信息)；  
+    命令```git diff -- stat branch-name origin/branch-name```用于查看本地仓库和远程仓库的不同(统计信息)；    
 
 -----------------------------------------
