@@ -1,16 +1,18 @@
 # Notes
 -----------------------------------------
 
-1. Linux/Unix网络编程里面的文件会出现LF、CRLF格式问题，Windows下为CRLF， Linux/Unix为LF；
+1. Linux/Unix网络编程里面的文件会出现LF、CRLF格式问题，Windows下为CRLF， Linux/Unix为LF
 
-2. 
+2. xshell 后台运行任务并打印日志文件：```nohup git clone -b refresh-v0.6 --recursive https://github.com/lowrisc/lowrisc-chip.git > /home/yzwang/log.txt 2>&1 &```
+
+3. 
 ````C++
 //使用remove和erase去除字符串中指定字符
 string s1;
 s1.erase(std::remove(s1.begin(), s1.end(), 'X'), s1.end());
 ````
 
-3. 
+4. 
 ````C++
 //完美转发
 void f(int v1, int& v2)
@@ -39,7 +41,7 @@ int main()
 //42 1
 //42 2
 ````
-4. 
+5. 
 ````C++
 /**
  * Definition for a binary tree node.
