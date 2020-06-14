@@ -54,7 +54,7 @@ int main()
  */
 class Solution {
 public:
-	//二叉树的最近公共祖先
+	//二叉树的最近公共祖先(236. 二叉树的最近公共祖先)
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root == NULL)
             return NULL;
@@ -72,6 +72,23 @@ public:
             return root;
         
         return NULL; // 必须有返回值
+    }
+};
+class Solution {
+public:
+    //判断树B是A的子结构(面试题26.树的子结构)
+    bool check(TreeNode* A, TreeNode* B)
+    {
+        if (!B)return true;
+        if (!A)return false;
+        if (A->val != B->val)return false;
+        else return check(A->left, B->left) && check(A->right, B->right);
+
+    }
+    bool isSubStructure(TreeNode* A, TreeNode* B) {
+        if (!B)return false;
+        if (!A)return false;
+        return check(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B);
     }
 };
 ````
