@@ -91,4 +91,23 @@ public:
         return check(A, B) || isSubStructure(A->left, B) || isSubStructure(A->right, B);
     }
 };
+//二叉树非递归版中序遍历(面试题54.二叉搜索树的第k大节点)
+class Solution {
+public:
+    int kthLargest(TreeNode* root, int k) {
+        stack<TreeNode*> stk;
+        TreeNode* cur = root;
+        while(cur || stk.size()) {
+            while(cur) {
+                stk.push(cur);
+                cur = cur->right;
+            }
+            cur = stk.top();
+            stk.pop();
+            if(-- k == 0) return cur->val;
+            cur = cur->left;
+        }
+        return root->val;
+    }
+};
 ````
