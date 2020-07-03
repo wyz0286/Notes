@@ -110,4 +110,20 @@ public:
         return root->val;
     }
 };
+//108.将有序数组转换为平衡二叉搜索树
+class Solution {
+public:
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        return help(nums, 0, nums.size() - 1);
+    }
+    TreeNode* help(vector<int>& nums, int l, int r) {
+        if (l > r)return nullptr;
+        int mid = l + ((r - l) >> 1);
+
+        TreeNode* root = new TreeNode(nums[mid]);
+        root->left = help(nums, l, mid - 1);
+        root->right = help(nums, mid + 1, r);
+        return root;
+    }
+};
 ````
